@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>TEST_Keyboard</title>
+    <script src="keyboard.js"></script>
+    <script src="prop.js"></script>
+    <script src="animation.js"></script>
+</head>
+
+<body>
+    <canvas id="canvas-main"></canvas>
+</body>
+<script>
+    const canvas = document.getElementById('canvas-main');
+    const context = canvas.getContext('2d');
+    const keyboard = new Keyboard(document);
+    const animation = new AnimationFrame(context);
+
+    const prop = new Prop(context, keyboard);
+    prop.x = 0;
+    prop.y = 0;
+
+    animation.newSprite(prop);
+    animation.turnOn();
+</script>
+
+</html>
